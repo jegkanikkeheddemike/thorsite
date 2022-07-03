@@ -47,7 +47,7 @@ async fn main() -> std::io::Result<()> {
         let mut process = lock.take().unwrap();
         process.kill().unwrap();
         process.wait().unwrap();
-        println!("Closed server");
+        println!("\nClosed server");
     }).unwrap();
 
 
