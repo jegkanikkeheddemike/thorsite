@@ -68,10 +68,16 @@ async fn main() -> std::io::Result<()> {
 
 
     pull();
-    *PROCESS.lock().unwrap() = Some(spawn());
+    {
+        *PROCESS.lock().unwrap() = Some(spawn());
+    }
+    
 
-    HttpServer::new(|| App::new().service(webhook_listen))
+    let container = HttpServer::new(|| App::new().service(webhook_listen))
         .bind(("0.0.0.0", 3001))?
-        .run()
-        .await
+        .run();
+
+    println!("Container listening");
+
+    container.await
 }
