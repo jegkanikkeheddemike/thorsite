@@ -13,6 +13,8 @@ fn spawn() -> Child {
     let mut prerun = Command::new("bash").arg("prerun.bash").spawn().unwrap();
     prerun.wait().unwrap();
 
+    println!("Finished prerun, starting server");
+
     Command::new("./target/release/server").spawn().unwrap()
 }
 
