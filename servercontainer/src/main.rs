@@ -15,8 +15,13 @@ fn spawn() -> Child {
 
 #[post("/")]
 async fn webhook_listen(_: String) -> impl Responder {
+
+    println!("Prekill");
+
     let mut lock = PROCESS.lock().unwrap();
     let _ = lock.as_mut().unwrap().kill();
+
+    println!("Postkill");
 
     //pull
     let output = Command::new("git")
@@ -28,6 +33,7 @@ async fn webhook_listen(_: String) -> impl Responder {
 
     *lock = Some(spawn());
 
+    println!("Post spawn");
     ""
 }
 
