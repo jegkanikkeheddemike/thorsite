@@ -25,7 +25,7 @@ async fn webhook_listen(_: String) -> impl Responder {
 
     //pull
     let output = Command::new("git")
-        .args(["pull", "https://github.com/jegkanikkeheddemike/thorsite"])
+        .args(["pull"])
         .output()
         .unwrap();
 
