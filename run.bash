@@ -1,4 +1,4 @@
-cd container/thorsite
+cd thorsite
 npm run build
 cd ..
 cargo build --release
