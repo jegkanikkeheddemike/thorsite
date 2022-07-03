@@ -10,7 +10,10 @@ lazy_static::lazy_static! {
 }
 
 fn spawn() -> Child {
-    Command::new("bash").arg("run.bash").spawn().unwrap()
+    let mut prerun = Command::new("bash").arg("prerun.bash").spawn().unwrap();
+    prerun.wait().unwrap();
+
+    Command::new("./target/release/server").spawn().unwrap()
 }
 
 fn pull() {
