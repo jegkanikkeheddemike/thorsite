@@ -15,7 +15,11 @@ fn spawn() -> Child {
 
     println!("Finished prerun, starting server");
 
-    Command::new("./target/release/server").spawn().unwrap()
+    let child = Command::new("./target/release/server").spawn().unwrap();
+
+    println!("Server started");
+    
+    child
 }
 
 fn pull() {
