@@ -7,4 +7,9 @@ edition = "2021"
 
 [dependencies]
 actix-web = "*"
-actix-files = "*"
+
+actix-web-static-files = "*"
+static-files = "*"
+
+[build-dependencies]
+static-files = "*"
