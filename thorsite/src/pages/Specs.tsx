@@ -19,14 +19,19 @@ export const Specs: Component = () => {
 
         let logo_raw = await logo_res2
         let info_raw = await info_res2
+        
+        let logo = ""
+        
+        const legal_chars = [" ","o","s","+","-","/",".", "`", ":", "\n"]
 
-        let first_space = logo_raw.indexOf(" ")
-        logo_raw = logo_raw.substring(first_space)
-        /*
-        let last_logo_char = logo_raw.indexOf("[")
-        logo_raw = logo_raw.substring(0, last_logo_char)
-        */
-        setlogo(logo_raw)
+        for (let i = 0; i < logo_raw.length; i ++) {
+            let c = logo_raw.charAt(i)
+            if (legal_chars.includes(c)) {
+                logo += c
+            }
+        }
+
+        setlogo(logo)
         setinfo(info_raw)
     }
     fetch_specs()
