@@ -1,0 +1,50 @@
+.home {
+    width: 100%;
+    height: 100%;
+}
+
+
+.home h1 {
+    text-align: center;
+    font-size: 4em;
+    margin: 15px;
+}
+
+.chapter {
+    margin-left: 50px;
+}
+
+.chapter_1 {
+    overflow: hidden;
+    
+}
+
+.chapter_1_titletext {
+    float: left;
+    width: calc(30% - 50px);
+}
+
+.chapter_1_images {
+    float: right;
+    margin-right: 50px;
+    width: calc(70% - 50px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.chapter_1_images img {
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.chapter_2_text {
+    float: left;
+    width: calc(35% - 50px);
+}
+
+.chapter_2_specs {
+    float: right;
+    width: calc(65%);
+    min-height: 100vh;
+}

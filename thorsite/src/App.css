@@ -1,22 +1,44 @@
-body {
+body,
+html {
   margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #001219;
+  color: #E9D8A6;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a {
+  color: inherit;
 }
 
 .navbar {
-  display: inline;
-  width: 100%;
-  height: 100px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #005F73;
 }
 
 .nav_link {
-  margin: 10px;
-  height: 100%;
-  padding: 10px;
-  background-color: rgb(33,33,33);
-  color: aliceblue;
-  font-size: larger;
+  float: left;
 }
 
-.nav_link:hover {
-  background-color: black;
+.nav_link a {
+  display: block;
+  color: inherit;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav_link a:hover {
+  background-color: #001219;
+}
+
+
+.App {
+  width: 100%;
+  height: 100%;
 }

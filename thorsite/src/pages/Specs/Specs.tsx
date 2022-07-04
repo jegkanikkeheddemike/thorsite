@@ -24,12 +24,18 @@ export const Specs: Component = () => {
         
         const legal_chars = [" ","o","s","+","-","/",".", "`", ":", "\n"]
 
+        let last_legal_char = 0;
+
         for (let i = 0; i < logo_raw.length; i ++) {
             let c = logo_raw.charAt(i)
             if (legal_chars.includes(c)) {
                 logo += c
+                if (c != "\n") {
+                    last_legal_char = logo.length
+                }
             }
         }
+        logo = logo.substring(0,last_legal_char)
 
         setlogo(logo)
         setinfo(info_raw)
