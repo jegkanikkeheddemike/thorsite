@@ -22,8 +22,10 @@ export const Specs: Component = () => {
 
         let first_space = logo_raw.indexOf(" ")
         logo_raw = logo_raw.substring(first_space)
+        /*
         let last_logo_char = logo_raw.indexOf("[")
         logo_raw = logo_raw.substring(0, last_logo_char)
+        */
         setlogo(logo_raw)
         setinfo(info_raw)
     }
