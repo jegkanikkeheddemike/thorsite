@@ -12,9 +12,11 @@
     color: #0a9396;
     overflow: hidden;
     display: inline-block;
+    vertical-align: top;
 }
 
 .specs_info {
     color: #e9d8a6;
     display: inline-block;
+    vertical-align: top;
 }

@@ -12,11 +12,11 @@
 
 .chapter {
     margin-left: 50px;
+    position: absolute;
 }
 
 .chapter_1 {
     overflow: hidden;
-    
 }
 
 .chapter_1_titletext {
@@ -36,6 +36,10 @@
 .chapter_1_images img {
     border-radius: 10px;
     margin: 15px;
+}
+
+.chapter_2 {
+    top: 100vh;
 }
 
 .chapter_2_text {
