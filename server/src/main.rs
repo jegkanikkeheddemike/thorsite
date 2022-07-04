@@ -23,6 +23,5 @@ fn rocket() -> _ {
         .mount("/api", routes![specs_info, specs_logo])
         .mount("/static", FileServer::from("./thorsite/build/static"));
     println!("Server listening on port 3002");
-
     server
 }
