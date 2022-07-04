@@ -50,8 +50,8 @@ export const Chapter2: Component = () => {
                     genstartet, er linux det klart bedste valg for servere.
                     Derfor installerede jeg Arch linux på den, men uden
                     et desktop enviroment og window manager. Fordi den kører
-                    direkte i shell, bruger operativ systemet en meget lille
-                    mængde memory, og computeren spilder ikke CPU på at render
+                    direkte i shell, bruger operativ systemet en meget lidt
+                    memory, og computeren spilder ikke CPU på at render
                     en skærm der ikke bliver brugt. At serveren kører linux
                     er det også lettere at debugge fra min pc. Da jeg selv 
                     bruger distroet Zorin OS.
