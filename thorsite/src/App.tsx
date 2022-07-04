@@ -4,11 +4,12 @@ import {Specs} from "./pages/Specs";
 import {Home} from "./pages/Home";
 
 import "./App.css"
+import { Navbar } from "./Navbar";
 
 function App() {
   return (
     <div class="App">
-      <nav>Navbar</nav>
+      <Navbar />
       
         <Routes >
           <Route path = "/" element={<Home />} />
