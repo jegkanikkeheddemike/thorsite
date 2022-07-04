@@ -1,0 +1,7 @@
+port = 3001
+build = [
+    "bash npmbuild.bash",
+    "cargo build --release",
+]
+
+run = "./target/release/server"

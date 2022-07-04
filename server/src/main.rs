@@ -18,8 +18,11 @@ async fn specs() -> Option<fs::NamedFile> {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build()
+    let server = rocket::build()
         .mount("/", routes![home,specs])
         .mount("/api", routes![specs_info, specs_logo])
-        .mount("/static", FileServer::from("./thorsite/build/static"))
+        .mount("/static", FileServer::from("./thorsite/build/static"));
+    println!("Server listening on port 3002");
+
+    server
 }
