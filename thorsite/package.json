@@ -9,7 +9,9 @@
     "solid-scripts": "0.0.61",
     "typescript": "4.7.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "solid-app-router": "^0.4.1"
+  },
   "scripts": {
     "start": "solid-scripts start",
     "build": "solid-scripts build",

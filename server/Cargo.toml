@@ -6,10 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-web = "*"
-
-actix-web-static-files = "*"
-static-files = "*"
-
-[build-dependencies]
-static-files = "*"
+rocket = "0.5.0-rc.2"
+tokio = {version="*", features= ["full"]}

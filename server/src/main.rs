@@ -1,31 +1,25 @@
-use std::process::Command;
+//#[macro_use] extern crate rocket;
 
-use actix_web::{get, App, HttpRequest, HttpServer, Responder};
-use actix_web_static_files::ResourceFiles;
+use rocket::{get, launch, routes, fs::{FileServer, self}};
 
-#[get("/specs")]
-async fn specs(_: HttpRequest) -> impl Responder {
-    let stdout = Command::new("neofetch").output().unwrap().stdout;
+mod api;
+use crate::api::specs_logo;
+use crate::api::specs_info;
 
-    let specs = String::from_utf8_lossy(&stdout).to_string();
-
-    specs
+#[get("/")]
+async fn home() -> Option<fs::NamedFile> {
+    fs::NamedFile::open("./thorsite/build/index.html").await.ok()
 }
 
-include!(concat!(env!("OUT_DIR"), "/generated.rs"));
+#[get("/specs")]
+async fn specs() -> Option<fs::NamedFile> {
+    fs::NamedFile::open("./thorsite/build/index.html").await.ok()
+}
 
-#[actix_web::main]
-async fn main() -> Result<(), std::io::Error> {
-    HttpServer::new(|| {
-        let generated = generate();
-
-        let mut app = App::new();
-        app = app.service(specs);
-        app = app.service(ResourceFiles::new("/", generated));
-
-        app
-    })
-    .bind(("0.0.0.0", 3002))?
-    .run()
-    .await
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+        .mount("/", routes![home,specs])
+        .mount("/api", routes![specs_info, specs_logo])
+        .mount("/static", FileServer::from("./thorsite/build/static"))
 }
