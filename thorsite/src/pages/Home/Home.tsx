@@ -8,8 +8,10 @@ export const Home: Component = () => {
     return (
         <div class="home">
             <h1>Thor projekter</h1>
-            <Chapter1 />
-            <Chapter2 />
+            <div class="chapters">
+                <Chapter1 />
+                <Chapter2 />
+            </div>
         </div>
     )
 }

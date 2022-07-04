@@ -10,13 +10,19 @@
     margin: 15px;
 }
 
+.chapters {
+    position: absolute;
+    top: 160px;
+}
+
 .chapter {
     margin-left: 50px;
-    position: absolute;
+    min-height: 100vh;
 }
 
 .chapter_1 {
     overflow: hidden;
+    min-height: calc(100vh - 160px);
 }
 
 .chapter_1_titletext {
@@ -38,10 +44,6 @@
     margin: 15px;
 }
 
-.chapter_2 {
-    top: 100vh;
-}
-
 .chapter_2_text {
     float: left;
     width: calc(35% - 50px);
@@ -50,5 +52,10 @@
 .chapter_2_specs {
     float: right;
     width: calc(65%);
-    min-height: 100vh;
+}
+
+.chapter_2_text_2 {
+    float: right;
+    width: calc(65% - 200px);
+    margin-right: 200px;
 }
