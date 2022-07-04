@@ -52,7 +52,9 @@ export const Chapter2: Component = () => {
                     et desktop enviroment og window manager. Fordi den kører
                     direkte i shell, bruger operativ systemet en meget lille
                     mængde memory, og computeren spilder ikke CPU på at render
-                    en skærm der ikke bliver brugt.
+                    en skærm der ikke bliver brugt. At serveren kører linux
+                    er det også lettere at debugge fra min pc. Da jeg selv 
+                    bruger distroet Zorin OS.
                 </h3>
             </div>
         </div>
