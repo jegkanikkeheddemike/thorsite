@@ -1,7 +1,7 @@
 //#[macro_use] extern crate rocket;
 
 use rocket::fairing::{Fairing, Info, Kind};
-use rocket::http::{Header, Method};
+use rocket::http::Header;
 use rocket::Response;
 use rocket::{
     fs::{self, FileServer},
@@ -28,7 +28,6 @@ async fn specs() -> Option<fs::NamedFile> {
 
 #[launch]
 fn rocket() -> _ {
-
     let server = rocket::build()
         .mount("/", routes![home, specs])
         .mount("/api", routes![specs_info, specs_logo])
